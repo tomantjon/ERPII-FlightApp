@@ -1,0 +1,106 @@
+<mvc:View
+    controllerName="com.hogent.flightdemo.flightdemo.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+>
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>title}">
+<f:SimpleForm id="SimpleFormChange354"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="Add Flight"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label id="_IDGenLabel1" text="Airline" />
+				<Input id="formAirline" value="{form>/Carrid}" />
+				<Label id="_IDGenLabel2" text="flight Number" />
+				<Input id="_IDGenInput1" value="{form>/Connid}">
+				</Input>
+				
+				<Label id="_IDGenLabel3" text="Date" />
+				<DatePicker
+							id="DP1"
+                            value = "{form>/Fldate}"
+							placeholder="Enter Date"
+							change="handleChange"
+							class="sapUiSmallMarginBottom"/>
+			</f:content>
+                <Button id="_IDGenButton1" type="Accept"
+						text="Add Flight"
+						press="handleSavePress">	
+				</Button>
+		</f:SimpleForm>
+
+        <Table id="idFlightsTable"
+		inset="false"
+		items="{/flightSet}">
+		
+		<columns>
+			<Column id="_IDGenColumn1"
+				width="12em">
+				<Text id="_IDGenText1" text="Airline" />
+			</Column>
+			<Column id="_IDGenColumn2"
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text id="_IDGenText2" text="Flight Number" />
+			</Column>
+			<Column id="_IDGenColumn3"
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="End">
+				<Text id="_IDGenText3" text="Flight Date" />
+			</Column>
+			<Column id="_IDGenColumn4"
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="Center">
+				<Text id="_IDGenText4" text="Price" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem id="_IDGenColumnListItem1" vAlign="Middle">
+				<cells>
+					<Text id="_IDGenText5"
+						text="{Carrid}" />
+					<Text id="_IDGenText6"
+						text="{Connid}" />
+					<Text id="_IDGenText7"
+						text="{Fldate}" />
+					
+					<ObjectNumber id="_IDGenObjectNumber1"
+							number="{
+								parts:[{path:'Price'},{path:'Currency'}],
+								type: 'sap.ui.model.type.Currency',
+								formatOptions: {showMeasure: false}
+							}"
+							unit="{Currency}" />
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+
+
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
