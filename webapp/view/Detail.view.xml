@@ -1,0 +1,11 @@
+<mvc:View controllerName="com.hogent.flightdemo.flightdemo.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Page id="page"
+        title="Detail">
+
+    </Page>
+</mvc:View>
