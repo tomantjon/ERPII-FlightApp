@@ -11,6 +11,7 @@ sap.ui.define([
 
         return Controller.extend("com.hogent.flightdemo.flightdemo.controller.List", {
             onInit: function () {
+                //create empty model to capture new entry
                 var oFlight = {
                     Carrid: "",
                     Connid: "",
