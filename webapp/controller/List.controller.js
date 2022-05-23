@@ -35,6 +35,7 @@ sap.ui.define([
                 });
             },
             handleListItemPress: function (oEvent) {
+                //Get data from click event on table
                 let sCarrId = oEvent.getSource().getBindingContext().getProperty("Carrid");
                 let sConnId = oEvent.getSource().getBindingContext().getProperty("Connid");
                 let sFlDate = oEvent.getSource().getBindingContext().getProperty("Fldate");
